@@ -1,7 +1,5 @@
 <script>
 export default {};
 </script>
-<template>
-  <button>Hey you</button>
-</template>
+<template></template>
 <style scoped></style>

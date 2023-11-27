@@ -1,7 +1,12 @@
 <script>
-export default {};
+import { store } from "./store";
+export default {
+  data() {
+    return {
+      store,
+    };
+  },
+};
 </script>
-<template>
-  <h1>hey you</h1>
-</template>
+<template></template>
 <style scoped></style>
