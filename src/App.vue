@@ -18,8 +18,28 @@ export default {
     };
   },
   methods: {
-    effect: () => {
-      console.log(this.value);
+    select: function () {
+      if (this.store.key === "Selezionare:") {
+        axios
+          .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0")
+          .then((resp) => {
+            this.store.cardsGet = resp.data.data;
+            console.log(this.store);
+          });
+      } else {
+        axios
+          .get(
+            "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0",
+            {
+              params: {
+                archetype: this.store.key,
+              },
+            }
+          )
+          .then((resp) => {
+            this.store.cardsGet = resp.data.data;
+          });
+      }
     },
   },
 
@@ -36,7 +56,7 @@ export default {
 
 <template>
   <Appheader />
-  <AppBody @Clicked="effect" />
+  <AppBody @generate="select" />
   <AppFooter />
 </template>
 

@@ -14,7 +14,8 @@ export default {
   },
   methods: {
     onChange: function () {
-      console.log(this.key);
+      console.log(this.store.key);
+      this.$emit("generate");
     },
   },
 };
@@ -24,9 +25,10 @@ export default {
     <select
       class="form-select w-25 mx-5"
       aria-label="Default select example"
-      @change="onChange($event)"
-      v-model="key"
+      @change="onChange()"
+      v-model="store.key"
     >
+      <option selected>Selezionare:</option>
       <option value="Alien">Alien</option>
       <option value="Ally of Justice">Ally of Justice</option>
       <option value="Ancient Gear">Ancient Gear</option>
@@ -57,6 +59,7 @@ body {
     h2 {
       width: 100%;
       background-color: black;
+      color: white;
     }
     .card {
       width: calc(100% / 5);
