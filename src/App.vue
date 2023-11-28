@@ -17,6 +17,11 @@ export default {
       store,
     };
   },
+  methods: {
+    effect: () => {
+      console.log(this.value);
+    },
+  },
 
   created() {
     axios
@@ -31,7 +36,7 @@ export default {
 
 <template>
   <Appheader />
-  <AppBody />
+  <AppBody @Clicked="effect" />
   <AppFooter />
 </template>
 

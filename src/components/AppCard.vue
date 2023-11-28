@@ -11,7 +11,7 @@ export default {
   <div class="card">
     <img :src="list.card_images[0].image_url" alt="" />
     <h2>{{ list.name }}</h2>
-    <h3>{{ list.race }}</h3>
+    <h3>{{ list.race }}, {{ list.archetype }}</h3>
   </div>
 </template>
 <style scoped lang="scss">
